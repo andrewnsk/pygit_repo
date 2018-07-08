@@ -1,0 +1,36 @@
+version: "3.5"
+services:
+  web-pygit:
+
+    build: .
+    env_file:
+      - .env
+    restart: always
+    command: python app.py
+    ports:
+      - target: 5001
+        published: 5001
+    networks:
+      - pygit-net
+    volumes:
+      - .:/code
+
+  celery:
+    build: .
+    command: celery worker -A app.celery --loglevel=info
+    networks:
+      - pygit-net
+    volumes:
+      - .:/code
+
+  redis-pygit:
+    image: "redis:alpine"
+    restart: always
+    networks:
+      pygit-net:
+
+networks:
+  pygit-net:
+
+
+
