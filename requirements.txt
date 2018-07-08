@@ -1,0 +1,16 @@
+amqp==2.3.2
+billiard==3.5.0.3
+celery==4.2.0
+click==6.7
+Flask==1.0.2
+gitdb2==2.0.3
+GitPython==2.1.10
+itsdangerous==0.24
+Jinja2==2.10
+kombu==4.2.1
+MarkupSafe==1.0
+pytz==2018.5
+redis==2.10.6
+smmap2==2.0.3
+vine==1.1.4
+Werkzeug==0.14.1
